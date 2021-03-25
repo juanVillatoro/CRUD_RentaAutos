@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escriba los datos solicitados"
+        android:textSize="24dp"
+        android:layout_marginTop="20dp" />
+    <EditText
+        android:id="@+id/cod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Código"
+        android:textSize="24dp"
+        android:layout_below="@id/titulo"
+        android:inputType="number"/>
+    <EditText
+        android:id="@+id/placa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Placa"
+        android:textSize="24dp"
+        android:layout_below="@+id/cod"
+        android:inputType=""/>
+    <EditText
+        android:id="@+id/modelo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Modelo"
+        android:textSize="24dp"
+        android:layout_below="@id/placa"
+        android:inputType=""/>
+    <EditText
+        android:id="@+id/marca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Marca"
+        android:textSize="24dp"
+        android:layout_below="@id/modelo"
+        android:inputType="text"/>
+    <Button
+        android:id="@+id/btnInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="Insert"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/marca"/>
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="Update"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/btnInsert"/>
+    <Button
+        android:id="@+id/btnViewData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="List"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/btnUpdate"/>
+
+</RelativeLayout>
