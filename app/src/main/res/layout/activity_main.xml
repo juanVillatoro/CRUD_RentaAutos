@@ -11,55 +11,85 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Escriba los datos solicitados"
-        android:textSize="24dp"
+        android:textSize="25dp"
+        android:gravity="center"
         android:layout_marginTop="20dp" />
+    <Space
+        android:id="@+id/espacio1"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/titulo"/>
     <EditText
         android:id="@+id/cod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Código"
         android:textSize="24dp"
-        android:layout_below="@id/titulo"
+        android:gravity="center"
+        android:layout_below="@id/espacio1"
         android:inputType="number"/>
+    <Space
+        android:id="@+id/espacio2"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/cod"/>
     <EditText
         android:id="@+id/placa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Placa"
         android:textSize="24dp"
-        android:layout_below="@+id/cod"
-        android:inputType=""/>
+        android:gravity="center"
+        android:layout_below="@+id/espacio2"
+        android:inputType="text"/>
+    <Space
+        android:id="@+id/espacio3"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/placa"/>
     <EditText
         android:id="@+id/modelo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Modelo"
         android:textSize="24dp"
-        android:layout_below="@id/placa"
+        android:gravity="center"
+        android:layout_below="@id/espacio3"
         android:inputType=""/>
+    <Space
+        android:id="@+id/espacio4"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/modelo"/>
     <EditText
         android:id="@+id/marca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Marca"
         android:textSize="24dp"
-        android:layout_below="@id/modelo"
+        android:gravity="center"
+        android:layout_below="@id/espacio4"
         android:inputType="text"/>
+    <Space
+        android:id="@+id/espacio"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/marca"/>
     <Button
         android:id="@+id/btnInsert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Insert"
-        android:layout_marginTop="30dp"
-        android:layout_below="@id/marca"/>
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/espacio"/>
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Update"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/btnInsert"/>
     <Button
         android:id="@+id/btnViewData"
@@ -67,7 +97,6 @@
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="List"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:layout_below="@id/btnUpdate"/>
-
 </RelativeLayout>
