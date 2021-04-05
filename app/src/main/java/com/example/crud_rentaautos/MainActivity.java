@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText id, placa, modelo, marca;
-    Button insert, list, update;
+    Button insert, list, update, delete;
     DatabaseHandler DB;
 
     @Override
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         insert = findViewById(R.id.btnInsert);
         update = findViewById(R.id.btnUpdate);
         list = findViewById(R.id.btnViewData);
+        delete = findViewById(R.id.btndelete);
         DB = new DatabaseHandler(this);
 
         //Agregamos evento click de los botones
@@ -114,6 +115,27 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
+        });
+
+        //Botón eliminar
+        delete.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String idTXT=id.getText().toString();
+
+                Boolean checkdeleteData=DB.deleteData(idTXT);
+
+                if(checkdeleteData==true){
+
+                    Toast.makeText(MainActivity.this, "El registro se eliminó,",
+                            Toast.LENGTH_SHORT).show();
+
+                }else{
+                    Toast.makeText(MainActivity.this, "El registro no se pudo eliminar",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+
         });
 
     }
