@@ -8,13 +8,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    String idP;
     EditText id, placa, modelo, marca;
     Button insert, list, update, delete;
     DatabaseHandler DB;
+    String action="new";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         list = findViewById(R.id.btnViewData);
         delete = findViewById(R.id.btndelete);
         DB = new DatabaseHandler(this);
+
+        showData();
 
         //Agregamos evento click de los botones
         insert.setOnClickListener(new View.OnClickListener() {
@@ -139,4 +144,44 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    //Mostrar los datos recibidos del List
+    private void showData() {
+
+        try{
+
+            Bundle bundle = getIntent().getExtras();
+            action = bundle.getString("action");
+            if(action.equals("edit")){
+
+                //Mostrar/ocultar botones
+                update.setVisibility(View.VISIBLE);
+                insert.setVisibility(View.GONE);
+
+                idP = bundle.getString("id");
+                String auto[]=bundle.getStringArray("auto");
+                TextView tempVal = (TextView) findViewById(R.id.cod);
+                tempVal.setText(idP);
+
+                tempVal=(EditText) findViewById(R.id.placa);
+                tempVal.setText(auto[0].toString());
+
+                tempVal=(EditText) findViewById(R.id.modelo);
+                tempVal.setText(auto[1].toString());
+
+                tempVal=(EditText) findViewById(R.id.marca);
+                tempVal.setText(auto[2].toString());
+
+            }
+        }catch (Exception e){
+
+            Toast.makeText(MainActivity.this, "Error: " +
+                    e.getMessage().toString(), Toast.LENGTH_LONG).show();
+
+        }
+
+
+    }
+
+
 }
